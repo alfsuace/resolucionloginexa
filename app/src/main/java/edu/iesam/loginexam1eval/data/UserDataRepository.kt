@@ -9,11 +9,11 @@ import org.koin.core.annotation.Single
 class UserDataRepository(private val localData: LoginXmlLocalDataSource):UserRepository {
 
     override fun getUserByEmail(email: String): User? {
-        TODO("Not yet implemented")
+        return localData.findById(email)
     }
 
     override fun saveUser(user: User) {
-        TODO("Not yet implemented")
+        localData.save(user)
     }
 
 

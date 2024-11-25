@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import edu.iesam.loginexam1eval.databinding.FragmentSingupBinding
 import edu.iesam.loginexam1eval.domain.User
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -33,13 +34,13 @@ class SingupFragment : Fragment() {
                 password = binding.password.toString()
             )
             viewModel.userExists(user)
-            val userExists = viewModel.uiState.value?.userExists
-            userExists?.let {
+            val userExists = viewModel.uiState.value?.userExists ?: false
+            userExists.let {
                 if (it==true){
                     Log.d("@dev", "el usuario existe")
                 }else{
                     viewModel.saveUser(user)
-
+                    findNavController().navigate(SingupFragmentDirections.actionSingupToWelcome())
                 }
             }
         }

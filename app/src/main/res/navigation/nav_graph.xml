@@ -11,6 +11,18 @@
         android:label="singup"
         tools:layout="@layout/fragment_singup">
 
+        <action
+            android:id="@+id/action_singup_to_welcome"
+            app:destination="@id/welcome" />
     </fragment>
+
+    <fragment
+        android:name="edu.iesam.loginexam1eval.presentation.WelcomeViewFragment"
+        android:id="@+id/welcome"
+        android:label="welcome"
+        tools:layout="@layout/welcome_view">
+
+    </fragment>
+
 
 </navigation>
