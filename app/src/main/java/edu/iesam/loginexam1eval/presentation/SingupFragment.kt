@@ -30,8 +30,8 @@ class SingupFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.register.setOnClickListener {
             val user = User(
-                email = binding.username.toString(),
-                password = binding.password.toString()
+                email = binding.username.text.toString(),
+                password = binding.password.text.toString()
             )
             viewModel.userExists(user)
             val userExists = viewModel.uiState.value?.userExists ?: false
