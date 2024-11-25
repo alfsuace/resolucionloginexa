@@ -16,14 +16,14 @@ class LoginXmlLocalDataSource (private val context: Context) {
 
     fun save(user: User) {
         val editor = sharedPref.edit()
-        editor.putString(user.id, gson.toJson(user))
+        editor.putString(user.email, gson.toJson(user))
         editor.apply()
     }
 
     fun saveAll(users: List<User>) {
         val editor = sharedPref.edit()
         users.forEach { user ->
-            editor.putString(user.id, gson.toJson(user))
+            editor.putString(user.email, gson.toJson(user))
         }
         editor.apply()
     }
