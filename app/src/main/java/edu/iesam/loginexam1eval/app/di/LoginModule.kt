@@ -1,4 +1,4 @@
-package edu.iesam.loginexam1eval.app
+package edu.iesam.loginexam1eval.app.di
 
 import org.koin.core.annotation.ComponentScan
 import org.koin.core.annotation.Module

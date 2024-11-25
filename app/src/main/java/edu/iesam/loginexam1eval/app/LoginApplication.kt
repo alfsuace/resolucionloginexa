@@ -1,9 +1,11 @@
 package edu.iesam.loginexam1eval.app
 
 import android.app.Application
+import edu.iesam.loginexam1eval.app.di.LoginModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.GlobalContext.startKoin
+import org.koin.ksp.generated.module
 
 
 class LoginApplication:Application() {
@@ -17,7 +19,7 @@ class LoginApplication:Application() {
             androidContext(this@LoginApplication)
             // Load modules
             modules(
-
+                LoginModule().module
             )
         }
     }
